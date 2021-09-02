@@ -1,0 +1,20 @@
+<form [formGroup]="userForm" (submit)="registerUser()">
+
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="mfirstName">
+
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="mlastName">
+
+  <label for="email">Email: </label>
+  <input id="email" type="text" formControlName="memail">
+
+  <label for="password">Password : </label>
+  <input id="password" type="password" formControlName="mpassword">
+
+  <label for="phone_number">Phone Number: </label>
+  <input id="phone_number" type="number" formControlName="mphoneNumber">
+
+  <button type="submit">Register</button>
+
+</form>
