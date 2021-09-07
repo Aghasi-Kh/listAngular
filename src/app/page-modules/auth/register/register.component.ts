@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  userForm = this.fb.group({
+    userForm = this.fb.group({
     mfirstName: this.fb.control('', Validators.required),
     mlastName: this.fb.control('', Validators.required),
     memail: this.fb.control('', [Validators.required, Validators.email]),
@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
     const data = await this.authService.register(userData);
 
     if (data.success) {
-      await this.router.navigateByUrl('/login');
+      await this.router.navigateByUrl('/');
     } else {
       console.log(data.message);
     }

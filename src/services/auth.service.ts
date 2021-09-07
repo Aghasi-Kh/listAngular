@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
-import {IUserData} from "../models/auth.model";
+import {IUserData, LUserData} from "../models/auth.model";
 import {Location} from "@angular/common";
 import {environment} from "../environments/environment";
 
@@ -14,12 +14,20 @@ export class AuthService {
   ) {
   }
 
-  register(userData: IUserData): Promise<{success: boolean, message: string}> {
+  register(userData: IUserData): Promise<{ success: boolean, message: string }> {
     const url = Location.joinWithSlash(
       environment.apiRoot || '', 'register'
     );
 
-    return this.httpClient.post<{success: boolean, message: string}>(url, userData).toPromise();
+    return this.httpClient.post<{ success: boolean, message: string }>(url, userData).toPromise();
+  }
+
+  login(userData: LUserData): Promise<{ success: boolean, message: string }> {
+    const url = Location.joinWithSlash(
+      environment.apiRoot || '', 'login'
+    );
+
+    return this.httpClient.post<{ success: boolean, message: string }>(url, userData).toPromise();
   }
 
 }

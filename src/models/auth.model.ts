@@ -5,4 +5,9 @@ export interface IUserData {
   password?: string,
   phone_number: number,
 }
+export interface LUserData {
+  email: string,
+  password: string,
+}
+
 
